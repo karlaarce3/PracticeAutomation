@@ -20,6 +20,7 @@ class TestPracticeAutoDelaysPage:
         landing_page = LandingPage(driver, env)
 
         # click on the delays option
+        landing_page.scroll_to_element(landing_page.delays_image)
         delays_page = landing_page.click_delays_option()
 
         # actions

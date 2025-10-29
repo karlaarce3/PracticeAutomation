@@ -30,6 +30,7 @@ class LandingPage(BasePage):
     images_option = (By.LINK_TEXT, "Broken Images")
     links_option = (By.LINK_TEXT, "Broken Links")
     accordions_option = (By.LINK_TEXT, "Accordions")
+    delays_image = (By.CSS_SELECTOR, 'img[data-image-title="timer"]')
     
     def __init__(self, driver, environment):
         super().__init__(driver)
