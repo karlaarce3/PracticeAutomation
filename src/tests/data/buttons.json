@@ -1,0 +1,18 @@
+[
+    {
+        "button": "cat",
+        "demo_text": "Meow!"
+    },
+    {
+        "button": "dog",
+        "demo_text": "Woof!"
+    },
+    {
+        "button": "pig",
+        "demo_text": "Oink!"
+    },
+    {
+        "button": "cow",
+        "demo_text": "Moo!"
+    }
+]

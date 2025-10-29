@@ -14,7 +14,3 @@ class DelaysPagePlay(BasePagePlay):
     def click_on_start_button(self):
         # actions
         self.click_element(self.start_button)
-
-    def focus_on_delays_text(self):
-        # actions
-        self.focus_element(self.delays_text)

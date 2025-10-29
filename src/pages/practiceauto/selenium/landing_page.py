@@ -5,6 +5,7 @@ from selenium.webdriver.common.by import By
 from utils.logger import get_logger
 from pages.practiceauto.selenium.base_page import BasePage
 from pages.practiceauto.selenium.delays_page import DelaysPage
+from pages.practiceauto.selenium.click_events_page import ClickEventsPage
 from config.config import BASE_URL
 
 logger = get_logger(__name__)
@@ -112,6 +113,7 @@ class LandingPage(BasePage):
     
     def click_click_option(self):
         self.click_element(self.click_option)
+        return ClickEventsPage(self.driver)
 
     def get_click_option(self):
         return self.find_element(self.click_option)

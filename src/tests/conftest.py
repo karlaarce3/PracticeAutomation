@@ -3,6 +3,7 @@ import logging
 
 from utils.logger import get_logger
 from selenium import webdriver
+from utils.read_json_data import read_json_file
 
 logger = get_logger(__name__)
 
@@ -35,9 +36,20 @@ def driver():
 
     driver.quit()
 
+@pytest.fixture
+def log_test_name(request):
+    logger.info("Test name: '%s' started", request.node.name)
+    def fin():
+        logger.info("Test name: '%s' finished", request.node.name)
+    request.addfinalizer(fin)
+
 @pytest.fixture()
 def env(request):
     return request.config.getoption("--env")
+
+@pytest.fixture(params=["buttons"])
+def read_data(request):
+    return read_json_file(f"src\\tests\\data\\{request.param}.json")
 
 def pytest_addoption(parser):
     parser.addoption(

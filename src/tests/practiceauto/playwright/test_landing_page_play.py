@@ -1,9 +1,15 @@
 import re
+import pytest
+
 from playwright.sync_api import Page, expect
 from pages.practiceauto.playwright.landing_page_play import LandingPagePlay
 
 class TestLandingPagePlay:
-    def test_landing_page(self, page: Page):
+    @pytest.mark.smoke
+    def test_landing_page(self, page: Page, log_test_name):
+        """
+        Test that the Practice Automation landing page is displayed with all options
+        """
         landing_page = LandingPagePlay(page)
         landing_page.navigate()
 
