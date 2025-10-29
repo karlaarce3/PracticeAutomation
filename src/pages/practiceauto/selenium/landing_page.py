@@ -6,7 +6,6 @@ from utils.logger import get_logger
 from pages.practiceauto.selenium.base_page import BasePage
 from pages.practiceauto.selenium.delays_page import DelaysPage
 from pages.practiceauto.selenium.click_events_page import ClickEventsPage
-from config.config import BASE_URL
 
 logger = get_logger(__name__)
 
@@ -34,7 +33,7 @@ class LandingPage(BasePage):
     
     def __init__(self, driver, environment):
         super().__init__(driver)
-        self.url = BASE_URL[environment]
+        self.url = "https://practice-automation.com/"
         self.driver.get(self.url)
         logger.info("Navigating to the page: " + self.url)
 
