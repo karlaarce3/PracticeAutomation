@@ -18,13 +18,13 @@ class TestPracticeAutoDelaysPage:
         """
         # create the page object
         landing_page = LandingPage(driver, env)
-        wait = WebDriverWait(driver, 15)
 
         # click on the delays option
         delays_page = landing_page.click_delays_option()
 
         # actions
         delays_page.click_start_button()
+        wait = WebDriverWait(driver, 15)
         wait.until(EC.text_to_be_present_in_element(delays_page.delays_text, "Liftoff!"))
 
         # asserts
