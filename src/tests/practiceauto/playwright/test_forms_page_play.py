@@ -2,7 +2,6 @@ import re
 import os
 import pytest
 
-from config.config import user_name, password, mail
 from playwright.sync_api import Page
 from pages.practiceauto.playwright.landing_page_play import LandingPagePlay
 
@@ -27,13 +26,13 @@ class TestFormsPagePlay:
         page.on("dialog", handle_dialog)
         
         # actions
-        forms_page.fill_name(user_name)
-        forms_page.fill_password(password)
+        forms_page.fill_name("Karla")
+        forms_page.fill_password("P@ssw0rd")
         forms_page.check_drink_2()
         forms_page.check_drink_3()
         forms_page.check_color_3()
         forms_page.select_automation_option("yes")
-        forms_page.fill_email(mail)
+        forms_page.fill_email("karla@gmail.com")
         forms_page.enter_message(f"{message_test}")
         forms_page.click_submit()
 
